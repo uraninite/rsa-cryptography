@@ -10,6 +10,7 @@ token = hashlib.sha512(str.encode())
 
 
 def modrandfunc(token, n):
+        n+=n
         token = token.digest().hex()
  
         if (len(token) < n):
@@ -42,7 +43,9 @@ print("The binary equivalent of SHA256 is :")
 print("\n")
 
 
+print(bytes.fromhex(modrandfunc(token, 191)))
 
+print("\n")
 
 print(token.digest())
 
