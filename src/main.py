@@ -10,7 +10,6 @@ except:
         os.system('reset')
         from Crypto.PublicKey import RSA
 
-import Crypto.Random
 from Crypto.Cipher import PKCS1_OAEP
 import binascii
 
