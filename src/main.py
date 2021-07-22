@@ -10,7 +10,7 @@ except:
         os.system('reset')
         from Crypto.PublicKey import RSA
 
-
+import Crypto.Random
 from Crypto.Cipher import PKCS1_OAEP
 import binascii
 
@@ -19,6 +19,7 @@ import binascii
 
 
 keyPair = RSA.generate(3072)
+
 
 pubKey = keyPair.publickey()
 print(f"Public key:  (n={hex(pubKey.n)}, e={hex(pubKey.e)})")
@@ -44,3 +45,6 @@ print("Encrypted:", binascii.hexlify(encrypted))
 decryptor = PKCS1_OAEP.new(keyPair)
 decrypted = decryptor.decrypt(encrypted)
 print('Decrypted:', decrypted)
+
+
+#source world wide web cryptobook.nakov.com
